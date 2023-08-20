@@ -11,6 +11,9 @@ speaker = win32com.client.Dispatch("SAPI.SpVoice")
 speaker.Rate = -2
 
 
+
+def chat(query):
+
 # todo: Wrap this in a catch exception
 def ai(prompt):
     openai.api_key = apikey
@@ -74,13 +77,15 @@ if __name__ == '__main__':
             #   say("Music file not found, try searching for another name")
             # The voice can be annoying stick to print
         # say(query)
-        if "What is the time".lower() in query.lower():
+        elif "What is the time".lower() in query.lower():
             strfTime = datetime.datetime.now().strftime("%H:%M:%S")
             say(f"The time is {strfTime} ")
 
-        if "Open chrome".lower() in query.lower():
+        elif "Open chrome".lower() in query.lower():
             os.system(
                 r'"C:\Program Files\Google\Chrome\Application\chrome.exe"')  # Use double quotes for similar paths so cmd treats it as a single paath even with spaces
 
-        if "Use AI".lower() in query.lower():
+        elif "Use AI".lower() in query.lower():
             ai(prompt=query)
+        else:
+            chat(query)

@@ -1,0 +1,25 @@
+OpenAI response for prompt: use AI to write a python calculator 
+****************
+
+ 
+
+def calculator():
+  while True:
+    user_input = input("What operation would you like to perform? ")
+    if user_input == "+":
+      num1 = int(input("Please enter the first number: "))
+      num2 = int(input("Please enter the second number: "))
+      result = num1 + num2
+      print("The result is: " + str(result))
+    elif user_input == "-":
+      num1 = int(input("Please enter the first number: "))
+      num2 = int(input("Please enter the second number: "))
+      result = num1 - num2
+      print("The result is: " + str(result))
+    elif user_input == "*":
+      num1 = int(input("Please enter the first number: "))
+      num2 = int(input("Please enter the second number: "))
+      result = num1 * num2
+      print("The result is: " + str(result))
+    elif user_input == "/":
+      num1 = int(input("Please enter the first number: "))
